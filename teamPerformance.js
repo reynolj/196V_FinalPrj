@@ -2,10 +2,8 @@ let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
         let teamStats = JSON.parse(this.responseText);
-        //document.getElementById("demo").innerHTML = myObj.name;
         let select = document.getElementById("team-selector");
         for (let i = 0; i < teamStats.data.length; i++){
-            //teamArray.push(teamStats.data[i].team.name);
             let option = document.createElement("option");
             option.text = teamStats.data[i].team.name;
             select.add(option);
@@ -24,7 +22,13 @@ xmlhttp.onreadystatechange = function() {
             console.log(selectedTeamStats);
             document.getElementById("team-name").innerHTML = "Dota2 TI9 :: " + teamName;
         }
-        //let svg =
+        let teamScore = d3.select("#team-score")
+            .append("svg")
+            .attr("width", 300)
+            .attr("height", 300)
+            .attr("id","pie-wins-losses")
+            .style("border", "1px solid black")
+            .style("box-shadow", "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19");
     }
 };
 //xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://datdota.com/api/teams/performances?teams=2163&tier=1&tier=2&valve-event=does-not-matter&threshold=1&patch=7.22&after=20%2F08%2F2019&before=25%2F08%2F2019&duration=0%3B200&duration-value-from=0&duration-value-to=200", true);
