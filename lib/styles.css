@@ -1,0 +1,11 @@
+text.graph-title {
+    fill: black;
+    font-family: "sans-serif";
+    font-size: 24px;
+}
+text.graph-shadow {
+    fill: white;
+    font-family: "sans-serif";
+    font-size: 20px;
+    text-shadow: 2px 2px 4px #000000;
+}
