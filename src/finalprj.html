@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="../lib/teamPerformance.js"></script>
+    <script type="text/javascript" src="../lib/heroID.js"></script>
+    <script src="../lib/heroesPicked.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Final Project 196V</title>
+    <meta name="author" content="Jake Reynolds, Sam Hendryx" />
+    <meta name="description" content="Team Liquid summary at TI9" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="../lib/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/finalprj.css" />
+    <link rel="stylesheet" href="../lib/styles.css">
+
+</head>
+<body>
+
+
+<div id="fullpage">
+    <div class="section active" id="section0"><h1>Introduction</h1></div>
+    <div class="section" id="section1">
+        <div class="flex-container" style="flex-direction: column;vertical-align: top; height: 75vh;">
+            <h1>Dota2 TI9 Tournament Results</h1>
+            <span>
+                <label for="team-selector" style="color: #282828">Pick a team to inspect: </label><select id="team-selector"></select>
+            </span>
+            <div class="flex-container" style="flex-direction: column;align-items: center;height: 50vh;vertical-align: 50%;">
+                <div style="width: fit-content; height: inherit; vertical-align: 50%;">
+                <h1 id = "team-name" style="text-align: center;"></h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="font-size: 24px; color: #282828; text-align: center">Wins / Losses</th>
+                        <th style="font-size: 24px; color: #282828; text-align: center">Radiant / Dire</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><div id="team-score"></div></td>
+                        <td><div id="team-sides"></div></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="flex-container" style="justify-content: center;">
+            <table>
+                <thead>
+                <tr>
+                    <th style="text-align: center"><h1>Heroes Picked</h1></th>
+                    <th style="text-align: center"><h1>Hero Stats</h1></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div id="hero-pick-pie"></div>
+                    </td>
+                    <td>
+                        <div id="hero-stats-table" style="justify-content: center; vertical-align:top; width: 300px; height: 600px;">
+                            <h2 id="hero-name" style="text-align: center;"></h2>
+                            <table style="width: 100%">
+                                <thead>
+                                <tr>
+                                    <th id="hero-stats-head-picks" style="text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-wins" style="text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-losses" style="text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-winrate" style="text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-kda" style="text-align: center; font-weight: bold"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td id="hero-stats-picks" style="text-align: center"></td>
+                                    <td id="hero-stats-wins" style="text-align: center"></td>
+                                    <td id="hero-stats-losses" style="text-align: center"></td>
+                                    <td id="hero-stats-winrate" style="text-align: center"></td>
+                                    <td id="hero-stats-kda" style="text-align: center"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="slide active"><h1>Player Performances</h1></div>
+        <div class="slide">
+            <div align="center">
+                <div class='tableauPlaceholder'
+                     id='viz1575769899139'
+                     style='position: relative'><noscript><a href='#'>
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Coreperfti9LvOG&#47;Dashboard1&#47;1_rss.png'
+                     style='border: none' /></a></noscript><object class='tableauViz'
+                     style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' /><param name='name'
+                    value='Coreperfti9LvOG&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Coreperfti9LvOG&#47;Dashboard1&#47;1.png' /> <param name='animate_transition'
+                    value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner'
+                    value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter'
+                    value='publish=yes' /></object></div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1575769899139');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.minWidth='420px';
+                        vizElement.style.maxWidth='950px';
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='587px';
+                        vizElement.style.maxHeight='695px';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                </div>
+            </div>
+        <div class="slide">
+            <div align="center">
+                <div class='tableauPlaceholder' id='viz1575770871876'
+                     style='position: relative'><noscript><a href='#'>
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Coreperfti9LvOG&#47;Dashboard2&#47;1_rss.png'
+                     style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url'
+                     value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root'
+                     value='' /><param name='name' value='Coreperfti9LvOG&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar'
+                     value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Coreperfti9LvOG&#47;Dashboard2&#47;1.png' />
+                     <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner'
+                     value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1575770871876');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.minWidth='420px';
+                        vizElement.style.maxWidth='750px';
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='587px';
+                        vizElement.style.maxHeight='695px';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                     </script>
+                </div>
+             </div>
+    </div>
+</div>
+<script type="text/javascript" src="../lib/fullpage.js"></script>
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#7BAABE', '#7BAABE']
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="../lib/heroID.js"></script>
+    <script src="../lib/heroesPicked.js"></script>
+    <link rel="stylesheet" href="../lib/styles.css">
+    <meta charset="UTF-8">
+    <title>Heroes Picked</title>
+</head>
+<body>
+<div class="flex-container" style="justify-content: center;">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div id="hero-pick-pie"></div>
+                </td>
+                <td>
+                    <div id="hero-stats-table" style="justify-content: center; vertical-align:top; width: 300px; height: 600px;">
+                        <h3 id="hero-name" style="text-align: center;"></h3>
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th id="hero-stats-head-picks"></th>
+                                    <th id="hero-stats-head-wins"></th>
+                                    <th id="hero-stats-head-losses"></th>
+                                    <th id="hero-stats-head-winrate"></th>
+                                    <th id="hero-stats-head-kda"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td id="hero-stats-picks" style="text-align: center"></td>
+                                <td id="hero-stats-wins" style="text-align: center"></td>
+                                <td id="hero-stats-losses" style="text-align: center"></td>
+                                <td id="hero-stats-winrate" style="text-align: center"></td>
+                                <td id="hero-stats-kda" style="text-align: center"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
