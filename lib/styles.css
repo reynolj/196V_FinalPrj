@@ -7,5 +7,16 @@ text.graph-shadow {
     fill: white;
     font-family: "sans-serif";
     font-size: 20px;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 1px 1px 4px #000000;
+}
+.flex-container{
+    display: flex;
+}
+body {
+    font: 14px sans-serif;
+}
+
+.arc path {
+    stroke: #000000;
+    stroke-width: 2px;
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="lib/teamPerformance.js"></script>
+    <link rel="stylesheet" href="lib/styles.css">
+    <meta charset="UTF-8">
+    <title>Team Performance</title>
+</head>
+<body>
+<div class="flex-container" style="flex-direction: column">
+    <h1>Dota2 TI9 Tournament Results</h1>
+    <span>
+        <label for="team-selector">Pick a team to inspect: </label><select id="team-selector"></select>
+    </span>
+    <div class="flex-container" style="flex-direction: column;width: fit-content;">
+        <h1 id = "team-name" style="text-align: center;"></h1>
+        <table title="Team Liquid">
+            <thead>
+                <tr>
+                    <th style="font-size: 24px">Wins / Losses</th>
+                    <th style="font-size: 24px">Radiant / Dire</th>
+                </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <td><div id="team-score"></div></td>
+                    <td><div id="team-sides"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

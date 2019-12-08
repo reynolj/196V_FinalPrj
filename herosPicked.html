@@ -1,102 +1,55 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-    body {
-        font: 10px sans-serif;
-    }
-
-    .arc path {
-        stroke: #fff;
-    }
-</style>
-<link rel="stylesheet" href="lib/styles.css">
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="lib/heroID.js"></script>
+    <script src="lib/herosPicked.js"></script>
+    <link rel="stylesheet" href="lib/styles.css">
+    <meta charset="UTF-8">
+    <title>Heroes Picked</title>
+</head>
 <body>
-<script type="text/javascript" src="lib/heroID.js"></script>
-<script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-<script>
-    d3.json("./data/heroStats.json", function(myJson){
-        data = getData(myJson);
-        createPieChart(data);
-    });
-
-    function getData(json){
-        let myArray = [];
-        for (let i = 0; i < 10; i++){
-            let index = heroLookup.findIndex(hero => hero.ID === json.data[i].hero);
-            let heroName = heroLookup[index].Hero;
-            myArray[i] = {"picks": json.data[i].total, "hero": heroName, "wins": json.data[i].wins, "losses": json.data[i].losses, "winrate": json.data[i].winrate, "kda": json.data[i].kda};
-        }
-        return myArray;
-    }
-
-    function createPieChart(data) {
-        //console.log(data);
-        var width = 960,
-            height = 700,
-            radius = Math.min(width, height) / 2;
-
-        var color = d3.scale.category10();
-
-        var arc = d3.svg.arc()
-            .outerRadius(radius - 10)
-            .innerRadius(0);
-
-        var pie = d3.layout.pie()
-            .sort(null)
-            .value(function (d) {
-                return d.picks;
-            });
-
-        var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-        var arcs = svg.selectAll(".arc")
-            .data(pie(data))
-            .enter().append("g")
-            .attr("class", "arc");
-
-        arcs.append("path")
-            .attr("d", arc)
-            .style("fill", function (d, i) {
-                return color(i);
-            });
-
-        arcs.append("text")
-            //.attr("dy", ".5em")
-            .attr("transform", function (d) {
-                var c = arc.centroid(d);
-                return "translate(" + c[0]*1.5 + "," + c[1]*1.5 + ")"; })
-            .style("text-anchor", "middle")
-            //.style("font-size", 45)
-            .attr("class", "graph-shadow")
-            .text(function (d) {
-                return d.data.hero;})
-
-            .on("mouseover", function (d, i) {
-                console.log(d);
-                arcs.append("text")
-                    //.attr("dy", ".5em")
-                    .attr("transform", "translate(" + arc.centroid(d) + ")")
-                    .style("text-anchor", "middle")
-                    .style("font-size", 45)
-                    .attr("class", "label graph-shadow")
-                    .text(data[i].hero);
-
-            })
-            .on("mouseout", function (d) {
-                arcs.select(".label").remove();
-            });
-    }
-
-    function test() {
-        console.log(data);
-
-    }
-</script>
-
+<div class="flex-container" style="justify-content: center;">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div id="hero-pick-pie"></div>
+                </td>
+                <td>
+                    <div id="hero-stats-table" style="justify-content: center; vertical-align:top; width: 300px; height: 600px;">
+                        <h3 id="hero-name" style="text-align: center;"></h3>
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th id="hero-stats-head-picks"></th>
+                                    <th id="hero-stats-head-wins"></th>
+                                    <th id="hero-stats-head-losses"></th>
+                                    <th id="hero-stats-head-winrate"></th>
+                                    <th id="hero-stats-head-kda"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td id="hero-stats-picks" style="text-align: center"></td>
+                                <td id="hero-stats-wins" style="text-align: center"></td>
+                                <td id="hero-stats-losses" style="text-align: center"></td>
+                                <td id="hero-stats-winrate" style="text-align: center"></td>
+                                <td id="hero-stats-kda" style="text-align: center"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </body>
-
 </html>
