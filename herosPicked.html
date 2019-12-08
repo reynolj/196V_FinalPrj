@@ -15,53 +15,24 @@
 <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
 <script>
     d3.json("./data/heroStats.json", function(myJson){
-        //console.log(myJson);
-        myData = {"data":[
-                {
-                    "hero":46,
-                    "wins":7,
-                    "losses":3,
-                    "total":10,
-                    "gamesRadiant":4,
-                    "gamesDire":6,
-                    "winrate":0.7,
-                    "kills":10.9,
-                    "deaths":4.1,
-                    "assists":9.6,
-                    "gpm":647.7,
-                    "xpm":708.7,
-                    "lastHits":388.9,
-                    "denies":10.1,
-                    "avgKal":6.157936507936508,
-                    "kda":5.0,
-                    "level":23.0,
-                    "heroDamage":29766.9,
-                    "towerDamage":6500.9,
-                    "heroHealing":0.0,
-                    "goldSpent":23210.5}]};
-        //console.log(myJson.data);
         data = getData(myJson);
         createPieChart(data);
-
     });
 
     function getData(json){
-        //console.log(json.data.length);
-        //console.log(heroLookup);
         let myArray = [];
         for (let i = 0; i < 10; i++){
             let index = heroLookup.findIndex(hero => hero.ID === json.data[i].hero);
             let heroName = heroLookup[index].Hero;
             myArray[i] = {"picks": json.data[i].total, "hero": heroName, "wins": json.data[i].wins, "losses": json.data[i].losses, "winrate": json.data[i].winrate, "kda": json.data[i].kda};
         }
-        console.log(myArray);
         return myArray;
     }
 
     function createPieChart(data) {
-        console.log(data);
+        //console.log(data);
         var width = 960,
-            height = 500,
+            height = 700,
             radius = Math.min(width, height) / 2;
 
         var color = d3.scale.category10();
@@ -91,16 +62,20 @@
             .attr("d", arc)
             .style("fill", function (d, i) {
                 return color(i);
-            })
-            .append("text")
-            //.attr("dy", ".5em")
-            .attr("transform", "translate(" + arc.centroid(d) + ")")
-            .style("text-anchor", "middle")
-            .style("font-size", 45)
-            .attr("class", "label graph-shadow")
-            .text(data[i].hero)
+            });
 
-            /*.on("mouseover", function (d, i) {
+        arcs.append("text")
+            //.attr("dy", ".5em")
+            .attr("transform", function (d) {
+                var c = arc.centroid(d);
+                return "translate(" + c[0]*1.5 + "," + c[1]*1.5 + ")"; })
+            .style("text-anchor", "middle")
+            //.style("font-size", 45)
+            .attr("class", "graph-shadow")
+            .text(function (d) {
+                return d.data.hero;})
+
+            .on("mouseover", function (d, i) {
                 console.log(d);
                 arcs.append("text")
                     //.attr("dy", ".5em")
@@ -113,7 +88,7 @@
             })
             .on("mouseout", function (d) {
                 arcs.select(".label").remove();
-            })*/;
+            });
     }
 
     function test() {
