@@ -22,24 +22,14 @@
 <div id="fullpage">
     <div class="section active" id="section0">
         <div style="width: auto; height: 100vh;">
-            <div>
-                <h1 style="width: fit-content;">Dota2 - TI9</h1>
-                <img src="../assets/TheInternationalSmall.png" height="50" width="50" style="float: left; position: relative; top: -50px; left: 220px;"/>
+            <div class="topleft" style = "text-align: left; color:white">
+                Dota2 - TI9
+                <img src="../assets/TheInternationalSmall.png" height="50" width="50"/><br>
+                Team Liquid Summary
+                <img src="../assets/LiquidSmall.png" height="50" width="120"/>
             </div>
-            <div>
-                <h1 style="display: inline-block; width: fit-content; position: relative; left: -385px;">Team Liquid Summary</h1>
-                <img src="../assets/LiquidSmall.png" height="50" width="120" style="position: relative; top: 10px; left: -410px;"/>
-            </div>
-            <div>
-                <ul class="normal">
-                    <li class="normal">Player Profiles</li>
-                    <li class="normal">Team Wins</li>
-                    <li class="normal">Heros Picked</li>
-                    <li class="normal">Player Performances</li>
-                </ul>
-            </div>
-            <div style="position: absolute; bottom: 10px; right: 20px;">
-                <h1>Jake Reynolds and Sam Hendryx</h1>
+            <div style="color: white; position: absolute; bottom: 10px; right: 20px;">
+                <h1 style="color: white">Jake Reynolds and Sam Hendryx</h1>
             </div>
         </div>
     </div>
@@ -119,18 +109,18 @@
     </div>
     <div class="section" id="section2">
         <div class="flex-container" style="flex-direction: column;vertical-align: top; height: 75vh;">
-            <h1>Dota2 TI9 Tournament Results</h1>
+            <h1 style="color: white">Dota2 TI9 Tournament Results</h1>
             <span>
-                <label for="team-selector" style="color: #282828">Pick a team to inspect: </label><select id="team-selector"></select>
+                <label for="team-selector" style="color: white">Pick a team to inspect: </label><select id="team-selector"></select>
             </span>
             <div class="flex-container" style="flex-direction: column;align-items: center;height: 50vh;vertical-align: 50%;">
                 <div style="width: fit-content; height: inherit; vertical-align: 50%;">
-                <h1 id = "team-name" style="text-align: center;"></h1>
+                <h1 id="team-name" style="color: white; text-align: center;"></h1>
                 <table>
                     <thead>
                     <tr>
-                        <th style="font-size: 24px; color: #282828; text-align: center">Wins / Losses</th>
-                        <th style="font-size: 24px; color: #282828; text-align: center">Radiant / Dire</th>
+                        <th style="font-size: 24px; color: white; text-align: center">Wins / Losses</th>
+                        <th style="font-size: 24px; color: white; text-align: center">Radiant / Dire</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -149,8 +139,8 @@
             <table>
                 <thead>
                 <tr>
-                    <th style="text-align: center"><h1>Liquid's Top 10 Most Picked Heroes</h1></th>
-                    <th style="text-align: center"><h1>Hero Stats</h1></th>
+                    <th style="text-align: center"><h1 style="color: white;">Liquid's Top 10 Most Picked Heroes</h1></th>
+                    <th style="text-align: center"><h1 style="color: white;">Hero Stats</h1></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -160,24 +150,24 @@
                     </td>
                     <td>
                         <div id="hero-stats-table" style="justify-content: center; vertical-align:top; width: 300px; height: 600px;">
-                            <h2 id="hero-name" style="text-align: center;"></h2>
+                            <h2 id="hero-name" style="color: white; text-align: center;"></h2>
                             <table style="width: 100%">
                                 <thead>
                                 <tr>
-                                    <th id="hero-stats-head-picks" style="text-align: center; font-weight: bold"></th>
-                                    <th id="hero-stats-head-wins" style="text-align: center; font-weight: bold"></th>
-                                    <th id="hero-stats-head-losses" style="text-align: center; font-weight: bold"></th>
-                                    <th id="hero-stats-head-winrate" style="text-align: center; font-weight: bold"></th>
-                                    <th id="hero-stats-head-kda" style="text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-picks" style="color: white; text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-wins" style="color: white; text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-losses" style="color: white; text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-winrate" style="color: white; text-align: center; font-weight: bold"></th>
+                                    <th id="hero-stats-head-kda" style="color: white; text-align: center; font-weight: bold"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td id="hero-stats-picks" style="text-align: center"></td>
-                                    <td id="hero-stats-wins" style="text-align: center"></td>
-                                    <td id="hero-stats-losses" style="text-align: center"></td>
-                                    <td id="hero-stats-winrate" style="text-align: center"></td>
-                                    <td id="hero-stats-kda" style="text-align: center"></td>
+                                    <td id="hero-stats-picks" style="color: white; text-align: center"></td>
+                                    <td id="hero-stats-wins" style="color: white; text-align: center"></td>
+                                    <td id="hero-stats-losses" style="color: white; text-align: center"></td>
+                                    <td id="hero-stats-winrate" style="color: white; text-align: center"></td>
+                                    <td id="hero-stats-kda" style="color: white; text-align: center"></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -189,7 +179,7 @@
         </div>
     </div>
     <div class="section" id="section4">
-        <div class="slide active"><h1>Player Performances</h1></div>
+        <div class="slide active"><h1 style="color: white;">Player Performances</h1></div>
         <div class="slide">
             <div align="center">
                 <div class='tableauPlaceholder'
@@ -251,7 +241,7 @@
 <script type="text/javascript" src="../lib/fullpage.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#7BAABE', '#7BAABE']
+        sectionsColor: ['#4BBFC3', '#4BBFC3', '#4BBFC3', '#4BBFC3', '#4BBFC3']
     });
 </script>
 </body>
