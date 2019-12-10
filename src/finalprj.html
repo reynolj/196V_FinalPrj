@@ -20,9 +20,31 @@
 <body>
 
 <div id="fullpage">
-    <div class="section active" id="section0"><h1>Introduction</h1></div>
-    <div class="section" id="section1" style="color: #78B4E0">
-        <div class="topleft" style = "text-align: left;">
+    <div class="section active" id="section0">
+        <div style="width: auto; height: 100vh;">
+            <div>
+                <h1 style="width: fit-content;">Dota2 - TI9</h1>
+                <img src="../assets/TheInternationalSmall.png" height="50" width="50" style="float: left; position: relative; top: -50px; left: 220px;"/>
+            </div>
+            <div>
+                <h1 style="display: inline-block; width: fit-content; position: relative; left: -385px;">Team Liquid Summary</h1>
+                <img src="../assets/LiquidSmall.png" height="50" width="120" style="position: relative; top: 10px; left: -410px;"/>
+            </div>
+            <div>
+                <ul class="normal">
+                    <li class="normal">Player Profiles</li>
+                    <li class="normal">Team Wins</li>
+                    <li class="normal">Heros Picked</li>
+                    <li class="normal">Player Performances</li>
+                </ul>
+            </div>
+            <div style="position: absolute; bottom: 10px; right: 20px;">
+                <h1>Jake Reynolds and Sam Hendryx</h1>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="topleft" style = "text-align: left; color:white">
             Team Liquid
             <br> Player Profiles
             <img src="../assets/LiquidSmall.png" height="50" width="120"/>
@@ -32,7 +54,7 @@
                 <div class = "columnImg">
                     <img src="../assets/Players/miracle800px.jpg" width="250"/>
                 </div>
-                <div class = "columnText" style="text-align: left; position: relative; left: 10px; font-size: 11px">
+                <div class = "columnText" style="color: white; text-align: left; position: relative; left: 10px; font-size: 11px">
                     <p>  Amer Al-Barkawi
                     <br>  Miracle-
                     <br>  Hard Carry
@@ -46,7 +68,7 @@
                     <img src="../assets/Players/w33800px.jpg" width="250"/>
                 </div>
 
-                <div class = "columnText" style="text-align: left; position: relative; left: 10px; font-size: 11px">
+                <div class = "columnText" style="color: white; text-align: left; position: relative; left: 10px; font-size: 11px">
                     <p>  Omar Aliwi
                         <br>  w33haa
                         <br>  Semi Carry
@@ -59,7 +81,7 @@
                     <img src="../assets/Players/MinD_ContRoL.jpg" width="250"/>
                 </div>
 
-                <div class = "columnText" style="text-align: left; position: relative; left: 10px; font-size: 11px">
+                <div class = "columnText" style="color: white; text-align: left; position: relative; left: 10px; font-size: 11px">
                     <p>  Ivan Ivanov
                         <br>  MinD_ContRoL
                         <br>  Offlaner
@@ -72,7 +94,7 @@
                     <img src="../assets/Players/GH.jpg" width="250"/>
                 </div>
 
-                <div class = "columnText" style="text-align: left; position: relative; left: 10px; font-size: 11px">
+                <div class = "columnText" style="color: white; text-align: left; position: relative; left: 10px; font-size: 11px">
                     <p>  Maroun Merhej
                         <br>  GH
                         <br>  Support
@@ -85,7 +107,7 @@
                     <img src="../assets/Players/KuroKy.jpg" width="250"/>
                 </div>
 
-                <div class = "columnText" style="text-align: left; position: relative; left: 10px; font-size: 11px">
+                <div class = "columnText" style="color: white; text-align: left; position: relative; left: 10px; font-size: 11px">
                     <p>  Kuro Takhasomi
                         <br>  KuroKy
                         <br>  Support / Captain
@@ -96,7 +118,7 @@
         </div>
     </div>
     <div class="section" id="section2">
-        <div class="flex-container" style="flex-direction: column;vertical-align: top; height: 75vh">
+        <div class="flex-container" style="flex-direction: column;vertical-align: top; height: 75vh;">
             <h1>Dota2 TI9 Tournament Results</h1>
             <span>
                 <label for="team-selector" style="color: #282828">Pick a team to inspect: </label><select id="team-selector"></select>
@@ -225,14 +247,11 @@
                 </div>
              </div>
     </div>
-    <div class="section" id="section5">
-
-    </div>
 </div>
 <script type="text/javascript" src="../lib/fullpage.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-            sectionsColor: ['#78B4E0', '#ffffff', '#78B4E0', '#ffffff', '#78B4E0', '#ffffff']
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#7BAABE', '#7BAABE']
     });
 </script>
 </body>
